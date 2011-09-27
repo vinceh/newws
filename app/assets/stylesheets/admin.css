@@ -1,0 +1,9 @@
+.adminseed {
+    display: inline-block;
+    margin: 30px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 350px;
+    height: 400px;
+    overflow-y: scroll;
+}

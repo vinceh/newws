@@ -1,0 +1,34 @@
+<%= form_for @seed, :url => { :action => form_action }, :html => { :multipart => true } do |f| %>
+		<legend>New Seed</legend>
+		<ul>
+			<li>
+				<%= f.label :title, "Title:"%>
+				<%= f.text_field :title %>
+			</li>
+			<li>
+				<%= f.label :description, "Description:"%>
+				<%= f.text_area :description %>
+			</li>
+			<li>
+				<%= f.label :content, "Content:"%>
+				<%= f.text_field :content %>
+			</li>
+            <li>
+				<%= f.label :ranking, "Ranking:"%>
+				<%= f.select :ranking, [1,2,3,-1].collect {|t| [t, t]} %>
+			</li>
+            <li>
+				<%= f.label :category, "Category:"%>
+				<%= f.select :category, getCategories().collect {|t| [t, t]} %>
+			</li>
+			<li>
+				<%= f.label :mediatype, "Type:"%>
+				<%= f.select :mediatype, getMediaTypes().collect {|t| [t, t]} %>
+			</li>
+            <li>
+				<%= f.label :thumbnail, "Thumbnail:"%>
+				<%= f.file_field :thumbnail %>
+			</li>
+		</ul>
+    <p><%=f.submit submit, :disable_with => 'Creating...'%></p>
+<% end %>

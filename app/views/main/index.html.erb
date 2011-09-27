@@ -1,0 +1,47 @@
+<div class='ball'></div>
+		<div class='mainContainer'>
+			<div class='header'>
+				<div class='headerBar'>
+
+				</div>
+				<div class='logo'></div>
+				<div class='fill'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='circle'></div>
+				<div class='date'>
+					<div class='dateday'>21</div>
+					<div class='datemonth'>SEP</div>
+					<div class='dateyear'>2011</div>
+				</div>
+			</div>
+
+            <% colors = ["#bca6ca", "#9edcf3", "#a7d3bd", "#fff097", "#f77aa6"] %>
+            <% @seeds.each do |s| %>
+                <div class='seedWrapper'>
+                    <h3 class='seedSectionTitle'><%= s[0].category %></h3>
+
+                    <div class='seedfirst seed' id=<%= s[0].id.to_s %>>
+                        <div class='seedtitle'><%= s[0].title %></div>
+                    </div>
+                    <div class='seedsecond seed' id=<%= s[1].id.to_s %>>
+                        <div class='seedtitle'><%= s[1].title %></div>
+                    </div>
+                    <div class='seedthird seed' id=<%= s[2].id.to_s %>>
+                        <div class='seedtitle'><%= s[2].title %></div>
+                    </div>
+
+                    <script type="text/javascript">
+                        // $("<%= "#" + s[0].category + "first" %>").css("border", "2px solid <%= colors.pop %> !important" );
+                        $("<%= "#" + s[0].id.to_s %>").css("background", "url('<%= s[0].thumbnail %>') center center");
+                        $("<%= "#" + s[1].id.to_s %>").css("background", "url('<%= s[1].thumbnail %>') center center");
+                        $("<%= "#" + s[2].id.to_s %>").css("background", "url('<%= s[2].thumbnail %>') center center");
+                        $("body").css("overflow-y", "hidden");
+                    </script>
+                </div>
+            <% end %>
+
+			<div class='footer'></div>
+		</div>

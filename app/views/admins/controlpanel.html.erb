@@ -1,0 +1,27 @@
+
+<% if flash[:message] %>
+<%= flash[:message] %>
+<br/>
+<% end %>	
+YOU ARE LOGGED IN MY FRIEND
+<br/>
+<br/>
+<%= link_to "Logout", :action => :logout %> <br/>
+<%= link_to "New Seed", :controller => :seeds, :action => :new %> <br/>
+<hr/>
+
+<% @seeds.each do |s| %>
+
+        <h2><%= s[0].category %></h2>
+
+        <%  s.each do |seed| %>
+            <div class='adminseed'>
+                <h3>Title: <%= seed.title %></h3>
+                <p>Description: <%= seed.description.html_safe %></p>
+                <p>Ranking: <%= seed.ranking %><p>
+                <p>Mediatype: <%= seed.mediatype %><p>
+                <p>Feeds: <%= seed.feeds %><p>
+                <p>Views: <%= seed.views %><p>
+            </div>
+        <% end %>
+<% end %>

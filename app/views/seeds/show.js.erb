@@ -1,0 +1,63 @@
+    var body = $("body");
+    body.append("<div class='backdrop'></div>");
+
+    var backdrop = $(".backdrop");
+
+    var popupwrap = $("<div class='popupwrap'></div>");
+    body.prepend(popupwrap);
+
+    var popup = $("<div class='popup'></div>");
+
+    $(window).resize(function() {
+
+        var windowheight = $(window).height();
+        var popupheight = popup.outerHeight();
+
+        popup.css("margin-top", (windowheight - popupheight)/2);
+    });
+
+    popupwrap.append(popup);
+
+    popupwrap.click( function() {
+
+        $(this).remove();
+        backdrop.remove();
+    });
+
+    popup.click( function() {
+        return false;
+    });
+
+    var title = "<div class='popuptitle'><%= @seed.title %></div>";
+    var description = "<div class='popupdesc'><%= escape_javascript(@seed.description.html_safe) %><div class='popuptitle'>";
+    var media = "<%= escape_javascript(@seed.content.html_safe) %>";
+
+    var close = $("<div class='popupclose'></div>");
+    close.click( function() {
+        popupwrap.remove();
+        backdrop.remove();
+    });
+
+    popup.append(title);
+    popup.append('<%= @seed.content.html_safe %>');
+
+    var buttoncont = $("<div class='buttonContainer'></div>");
+    var uparrow = $("<div class='uparrow'></div>");
+    buttoncont.append(uparrow);
+
+    var facebook = $("<div class='facebook'></div>");
+    buttoncont.append(facebook);
+
+    var twitter = $("<div class='twitter'></div>");
+    buttoncont.append(twitter);
+
+    var linkedin = $("<div class='linkedin'></div>");
+    buttoncont.append(linkedin);
+
+    popup.append(buttoncont);
+
+    popup.append(description);
+
+    popup.append(close);
+
+    $(window).resize();

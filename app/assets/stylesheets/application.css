@@ -1,0 +1,304 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+/* GLOBALS */
+
+body {
+	overflow-y: scroll;
+}
+
+.ball {
+	top: -10px;
+	position: absolute;
+	border: 3px solid #505050;
+	border-radius: 9999px;
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	opacity: 0;
+}
+/* HEADER */
+
+.header {
+	height: 250px;
+}
+
+.headerBar {
+	width: 100%;
+	margin-top: 30px;
+	height: 5px;
+	background-color: #505050;
+
+}
+
+.header div {
+	display: inline-block;
+	float: left;
+}
+
+.logo {
+	margin-top: 10px;
+	background: url('whitespace-logo2.png');
+	width: 200px;
+	height: 70px;
+	float: left;
+	display: inline-block;
+	background-size: cover;
+}
+
+.fill {
+	display: inline-block;
+	width: 300px;
+	height: 70px;
+}
+
+.circle {
+	margin: 15px 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 9999px;
+	border: 6px solid #505050;
+}
+
+.date {
+	color: #505050;
+	font-family: Calibri;
+	margin-top: 25px;
+	margin-left: 175px;
+	width: 65px;
+}
+
+.date .dateday {
+	margin-top: -6px;
+	margin-right: 2px;
+	font-size: 35px;
+}
+
+.date .datemonth {
+	display: block;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+.date .dateyear {
+	display: block;
+	font-size: 11px;
+}
+/* MAIN */
+.mainContainer {
+	z-index: -999;
+	width: 1200px;
+	margin: 0 auto;
+	height: 500px;
+}
+
+/* SEED WRAPPING */
+
+.seedWrapper {
+	float: left;
+	width: 240px;
+	display: inline-block;
+	height: 450px;
+
+}
+
+.seedWrapper .seedtitle {
+    font-family: arial;
+    width: 500%;
+	opacity: 0;
+    background: black;
+    position: absolute;
+    color: white;
+}
+
+.seedWrapper .seedfirst .seedtitle {
+	bottom: 8px;
+	height: 18px;
+	padding: 5px 0px 0px 5px;
+	font-size: 10px;
+}
+
+.seedWrapper .seedsecond .seedtitle {
+	bottom: 7px;
+	height: 13px;
+	padding: 5px 0px 0px 5px;
+	font-size: 7px;
+}
+
+.seedWrapper .seedthird .seedtitle {
+	bottom: 4px;
+	height: 6px;
+	padding: 1px 0px 0px 3px;
+	font-size: 4px;
+}
+
+.seedWrapper h3 {
+	margin: 0px;
+	text-align: center;
+	font-family: Calibri;
+	letter-spacing: 1px;
+	color: #a0a0a0;
+	font-size: 12px;
+}
+
+.seedWrapper div {
+	margin-left: auto;
+	margin-right: auto;
+	height: 120px;
+
+}
+
+.seedWrapper div:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.seedWrapper div:hover .seedtitle {
+	opacity: 1;
+}
+
+.seedfirst {
+    border: 2px solid black;
+    box-shadow: 2px 1px 3px #505050;
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+	margin-top: 10px;
+	width: 89%;
+	opacity: 0.5;
+}
+
+.seedsecond {
+    box-shadow: 1px 1px 2px #505050;
+    overflow: hidden;
+    position: relative;
+	border-radius: 5px;
+	margin-top: 30px;
+	width: 50%;
+	height: 68px !important;
+	opacity: 0.3;
+}
+
+.seedthird {
+    box-shadow: 1px 1px 2px #505050;
+    overflow: hidden;
+    position: relative;
+	border-radius: 3px;
+	margin-top: 30px;
+	width: 20%;
+	height: 30px !important;
+	opacity: 0.2;
+}
+
+
+/* POPUP */
+.backdrop {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	opacity: 0.8;
+}
+
+.popupwrap {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index: 998;
+}
+
+.popup {
+	position: relative;
+	font-family: arial;
+	z-index: 999;
+	margin: 0px auto;
+	width: 585px;
+	border: 1px solid black;
+	background-color: white;
+	padding: 25px;
+	overflow: hidden;
+}
+
+.popuptitle {
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.popupdesc {
+	margin-top: 15px;
+	font-size: 12px;
+}
+
+.popupclose {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 20px;
+	height: 20px;
+	background-color: black;
+}
+
+.popupclose:hover {
+	cursor: pointer;
+}
+
+.uparrow {
+	opacity: 0.8;
+	background: url('excla.png') center center;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background-size: cover;
+}
+
+.uparrow:hover, .facebook:hover, .twitter:hover, .linkedin:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.buttonContainer {
+	margin-top: 15px;
+}
+
+.facebook, .twitter, .linkedin {
+	margin-left: 5px;
+	opacity: 0.8;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+
+.facebook {
+	background: url('facebook.gif') center center;
+	background-size: cover;
+}
+
+.twitter {
+	background: url('twitter.png') center center;
+	background-size: cover;
+}
+
+.linkedin {
+	background: url('linkedin.png') center center;
+	background-size: cover;
+}
+
+/* FOOTER */
+
+.footer {
+	background-color: white;
+	float: left;
+	width: 100%;
+	height: 1200px;
+	border: 10px solid #505050;
+	border-radius: 9999px;
+}
